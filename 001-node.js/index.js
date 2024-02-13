@@ -40,10 +40,10 @@ console.log("Hello World!");
 //   },
 
 
-// Bunların dışında ben bu pakete dışardan herhangi bir modül ekleyebilirim. (Paketi dışarı bağımlı hale getiririm.)
+// Bunların dışında ben bu pakete dışardan herhangi bir paket veya modül ekleyebilirim. (Paketi dışarı bağımlı hale getiririm.)
 // Bir Node.js paketine bağımlılıklar eklemek mantıklı bir şekilde yapılırsa faydalı olabilir, ancak artıları ve eksileri tartmak ve olası dezavantajları en aza indirmek için en iyi uygulamaları takip etmek önemlidir.
 
-// Şimdilik deneme amaçlı bir modül ekleyelim.
+// Şimdilik deneme amaçlı bir paket ekleyelim.
 // npm install slugify (install yerine i kullanılabilir)
 
 // Burada package.json dosyamıza yeni bir property eklendi. 
@@ -52,7 +52,7 @@ console.log("Hello World!");
 //   }
 
 // Şimdi bu "bağımlılığı" kullanalım:
-import slugify from 'slugify';
+var slugify = require("slugify");
 
 const url = slugify("balkanlardan gelen soguk hava dalgasi ülkemizi etkileyecek!", "=");
 console.log(url);
