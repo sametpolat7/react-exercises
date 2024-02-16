@@ -12,7 +12,7 @@
 
 // Peki Node.js paketi nasıl oluşturulur?
 
-// Terminale yazılan npm init komutu ile bir node.js paketi oluşturabilir. Oluşan paket json formatında terminali hangi dizinde başlatıysanız oraya eklenir.
+// Terminale yazılan npm init komutu ile bir node.js paketi oluşturabilir. Oluşan pakette meta veriler json formatında tutulur. Terminali hangi dizinde başlatıysanız oraya eklenir.
 // Dosya şu şekilde olacaktır;
 /*
     {
@@ -52,7 +52,7 @@ console.log("Hello World!");
 //   }
 
 // Şimdi bu "bağımlılığı" kullanalım:
-var slugify = require("slugify");
+import slugify from "../node_modules/slugify/slugify.js";
 
 const url = slugify("balkanlardan gelen soguk hava dalgasi ülkemizi etkileyecek!", "=");
 console.log(url);
