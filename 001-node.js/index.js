@@ -3,15 +3,11 @@
 
 // Node.js bir programlama dili değil, JavaScript kodunu çalıştırmak için kullanılan bir çalışma zamanı ortamıdır. JavaScript, sunucu tarafı ve ağ uygulamaları oluşturmak için Node.js ile birlikte kullanılan programlama dilidir.
 
-// Node.js: JavaScript kodunu bir web tarayıcısının dışında yürütmek için bir çalışma zamanı ortamı.
-// JavaScript: Sunucu tarafı ve istemci tarafı uygulamaları oluşturmak için Node.js ile kullanılan programlama dili.
-
 // Özetle, Node.js kendi başına bir programlama dili olmasa da, JavaScript kodunu sunucularda çalıştırmak için bir platform sağlayarak geliştiricilerin JavaScript kullanarak çok çeşitli uygulamalar oluşturmasına olanak tanır.
 
 // NPM (Node Paket Yöneticisi): Node.js, dünyadaki en büyük açık kaynak kütüphaneleri ekosistemlerinden biri olan npm adlı yerleşik bir paket yöneticisi ile birlikte gelir. npm, geliştiricilerin yeniden kullanılabilir JavaScript kodunu kolayca yüklemelerine, yönetmelerine ve paylaşmalarına olanak tanır.
 
 // Peki Node.js paketi nasıl oluşturulur?
-
 // Terminale yazılan npm init komutu ile bir node.js paketi oluşturabilir. Oluşan pakette meta veriler json formatında tutulur. Terminali hangi dizinde başlatıysanız oraya eklenir.
 // Dosya şu şekilde olacaktır;
 /*
@@ -52,7 +48,7 @@ console.log("Hello World!");
 //   }
 
 // Şimdi bu "bağımlılığı" kullanalım:
-import slugify from "../node_modules/slugify/slugify.js";
+import slugify from "slugify";
 
 const url = slugify("balkanlardan gelen soguk hava dalgasi ülkemizi etkileyecek!", "=");
 console.log(url);
