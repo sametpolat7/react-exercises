@@ -15,3 +15,12 @@
 </>
 
 // Niye boş fragment kullandığımı hatırla!
+
+// Components
+// Bileşenler, HTML öğelerini döndüren fonksiyonlar gibidir.
+
+// Bileşenler, Class components ve Function components olmak üzere iki türdür, bu derste Function component' a odaklanacağız. Eski React kod tabanlarında, öncelikle Class bileşenlerinin kullanıldığını görebilirsiniz. Artık React 16.8'de eklenen Hook'lar ile birlikte Function bileşenlerinin kullanılması önerilmektedir.
+
+// Function Components
+// Bir Fonksiyon bileşeni de HTML döndürür ve bir Sınıf bileşeniyle aynı şekilde davranır, ancak Fonksiyon bileşenleri çok daha az kod kullanılarak yazılabilir, anlaşılması daha kolaydır.
+

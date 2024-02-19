@@ -1,16 +1,39 @@
-import './App.css';
-import Components from './components/001-components/Components';
-
-const name = "Samet";
-export const surName = "Polat";
+// import Components, { Main } from "./components/Components";
+import Props from "./components/Props";
 
 function App() {
-  return (
-    <>
-      <h1>Hello World! {`I'm ${name}`} {surName}.</h1>
-      <Components/>{/* import ettiğimiz component içinde children bir öğemiz yoksa bu şekilde bırakabiliriz. */}
-    </>
-  )
+    return(
+        <>
+        {/* <Components /> */}
+        {/* <Main /> */}
+        <Props 
+        name = "Samet" 
+        surName = "Polat" 
+        age = {29}
+        isLoggedIn = {true} 
+        friends = {[
+            {
+                id: 544512,
+                name: "Ali"
+            },
+            {
+                id: 874521,
+                name: "Kel"
+            },
+            {
+                id: 548451,
+                name: "Onur"
+            }
+        ]}
+        address= {
+            {
+                title: "Canakkale/Merkez",
+                zip: 57454
+            }
+        }
+        />
+        </>
+    )
 }
 
 export default App;
