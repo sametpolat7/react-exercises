@@ -55,7 +55,7 @@ Props.propTypes = {
         PropTypes.number,
         PropTypes.bool
     ]),
-    isLoggedIn: PropTypes.bool,
+    isLoggedIn: PropTypes.bool.isRequired,
     friends: PropTypes.array,
     address: PropTypes.shape({
         title: PropTypes.string,
