@@ -1,13 +1,26 @@
 // ==== REACT ====
-// React, Facebook tarafından oluşturulan bir JavaScript kütüphanesidir. React, kullanıcı arayüzü bileşenleri ile "Single Page Application" oluşturmaya yarayan bir araçtır. React bellekte SANAL bir DOM oluşturur. React, tarayıcının DOM'unu doğrudan manipüle etmek yerine, bellekte sanal bir DOM oluşturur ve tarayıcı DOM'unda değişiklik yapmadan önce gerekli tüm manipülasyonları burada gerçekleştirir.
+// React, Facebook tarafından oluşturulan ve özellikle tek sayfalık uygulamalar için kullanıcı arayüzleri oluşturmak amacıyla kullanılan bir JavaScript kütüphanesidir. İşte özellikleri:
 
-// React sadece değiştirilmesi gerekenleri değiştirir! React, hangi değişikliklerin yapıldığını bulur ve yalnızca değiştirilmesi gerekenleri değiştirir.
+// 1. Component Tabanlı Mimari: React, component tabanlı bir mimari üzerinde çalışır. componentler, bir React uygulamasının yapı taşlarıdır. Yeniden kullanılabilir kullanıcı arayüzü öğelerini ve mantığı kapsülleyerek karmaşık kullanıcı arayüzlerinin yönetimini ve bakımını kolaylaştırırlar.
 
-// Real DOM <html></html> etiketleri arasında yer alan hiyerarşik elementler topluluğu (ağacı) iken, Virtual DOM bunun bir kopyasıdır. JavaScript nesnesi olarak tutulur. Ve render edileceği zaman iki "sanal" DOM karşılaşarak "sadece" değişikliğin yapıldığı düğüm render edilir. Bu da gereksiz render işlemini engeller.
+// 2. Sanal DOM: React'in en önemli özelliklerinden biri sanal bir DOM (Belge Nesne Modeli) kullanmasıdır. Sanal DOM, gerçek DOM'un hafif bir kopyasıdır. Bir bileşenin durumu değiştiğinde, React ilk olarak gerçek DOM yerine sanal DOM'u günceller.
+
+// 3. Reconciliation (Uzlaşma): React, gerçek DOM'u verimli bir şekilde güncellemek için "uzlaşma" adı verilen bir süreç kullanır. Sanal DOM'u önceki sürümle (snapshot = anlık durum görüntüsü) karşılaştırır ve gerçek DOM'u güncellemenin en verimli yolunu hesaplar.
+
+// 4. JSX (JavaScript XML): React, JavaScript için bir sözdizimi uzantısı olan JSX'i kullanır. JSX, geliştiricilerin JavaScript içinde HTML benzeri kod yazmasına olanak tanıyarak UI bileşenlerini ve yapılarını tanımlamayı kolaylaştırır.
+
+// 5. Bildirimsel Sözdizimi: React, geliştiricilerin kullanıcı arayüzünün nasıl görünmesini istediklerini tanımladıkları ve React'in DOM'u bu tanıma uyacak şekilde güncellemeye özen gösterdiği bildirimsel bir programlama stilini teşvik eder. Bu, geliştiricilerin değişikliklere yanıt olarak DOM'u nasıl güncelleyeceklerini açıkça tanımlamaları gereken zorunlu programlamanın tersidir.
+
+// 6. State Management: React bileşenleri, zaman içinde değişebilen verileri temsil eden state'e sahip olabilir. Bir bileşenin durumu değiştiğinde, React güncellenmiş durumu yansıtmak için bileşeni ve alt bileşenlerini otomatik olarak yeniden oluşturur.
+
+// Lifecycle Methods: React bileşenleri, geliştiricilerin bir bileşenin yaşam döngüsünün çeşitli aşamalarına (örneğin DOM'a bağlandığında veya DOM'dan çıkarıldığında veya durumu veya prop'ları değiştiğinde) bağlanmasına olanak tanıyan yaşam döngüsü yöntemlerine sahiptir.
+
+// Component Yeniden Kullanılabilirliği: React, bileşenlerin yeniden kullanılabilirliğini teşvik ederek geliştiricilerin karmaşık kullanıcı arayüzlerini daha küçük, yeniden kullanılabilir bileşenlerden oluşturmasına olanak tanır. Bu modüler yaklaşım, uygulamaların bakımını ve ölçeklendirilmesini kolaylaştırır.
+
+// Genel olarak React, DOM'u yönetmek ve UI güncellemelerini işlemek için bildirimsel ve verimli bir yol sağlayarak etkileşimli kullanıcı arayüzleri oluşturma sürecini basitleştirir. Performansı, esnekliği ve sağlam ekosistemi nedeniyle geliştiriciler arasında yaygın bir popülerlik kazanmıştır.
 
 // Single-Page Applications
-// Tek sayfalı uygulama (SPA), bir sunucudan tamamen yeni sayfalar yüklemek yerine mevcut sayfayı dinamik olarak yeniden yazarak kullanıcıyla etkileşime giren bir web uygulaması veya web sitesidir. Daha basit bir ifadeyle, SPA'lar başlangıçta tek bir HTML sayfası yükler ve ardından kullanıcı uygulamayla etkileşime girdikçe, genellikle JavaScript aracılığıyla içeriği dinamik olarak günceller.
-
+// Tek sayfalı uygulama (SPA), bir sunucudan tamamen yeni sayfalar yüklemek yerine mevcut sayfayı dinamik olarak yeniden yazarak kullanıcıyla etkileşime giren bir web uygulaması veya web sitesidir.
 
 // JSX
 // JSX (JavaScript XML), React bileşenlerini yazmak için tercih edilen bir yoldur. JSX sözdizimi, geliştiricilerin HTML benzeri kodları doğrudan JavaScript dosyalarının içine yazmalarına olanak tanır (zorunlu değildir). Ancak JSX kendi başına geçerli bir JavaScript sözdizimi değildir. Compile edilmeden JavaScript koduna çevrilmesi gerekir. Bu işleme "transpilation" adı verilir. Transpilation, JSX kodunu tarayıcının anlayabileceği normal JavaScript koduna dönüştürme işlemidir. Bu genellikle JSX sözdizimini React.createElement() çağrılarına dönüştüren Babel gibi bir araç kullanılarak yapılır.
@@ -37,15 +50,3 @@ const elementActually = React.createElement('h1', null, 'Hello World!');
 // Amaç: React, UI bileşenleri oluşturmak ve durumu yönetmek için temel kütüphanedir, ReactDOM ise bu bileşenleri DOM'a işlemek ve tarayıcı ortamıyla etkileşim kurmak için gerekli işlevselliği sağlar.
 
 // Kullanım: React, ReactDOM ile web geliştirme, React Native ile mobil uygulama geliştirme veya Next.js gibi çerçevelerle sunucu tarafı oluşturma dahil olmak üzere çeşitli ortamlarda kullanılabilir. ReactDOM ise özellikle web geliştirme ve React bileşenlerinin tarayıcıda işlenmesi için tasarlanmıştır.
-
-
-// Virtual DOM Nasıl Oluşur?
-// Sanal DOM'un oluşturulması öncelikle ReactDOM tarafından değil, React paketi tarafından gerçekleştirilir.
-
-// JSX kullanarak React bileşenleri yazdığınızda ve React.createElement() kullanarak React öğeleri oluşturduğunuzda, React paketi tarafından sağlanan işlevselliği kullanmış olursunuz. Bu bileşenler ve öğeler sonuçta sanal DOM ağacını oluşturur.
-
-// ReactDOM, bu sanal DOM'u gerçek tarayıcı DOM'una dönüştürme zamanı geldiğinde devreye girer. ReactDOM, ReactDOM.render() gibi yöntemler sağlayarak React bileşenlerinizi ve öğelerinizi alır ve bunları tarayıcının DOM'una monte ederek uygulamanızı ekranda etkili bir şekilde oluşturur.
-
-// Yani, özetlemek gerekirse:
-// React paketi, React öğeleri ve bileşenleri dahil olmak üzere sanal DOM'un oluşturulmasından ve yönetilmesinden sorumludur.
-// ReactDOM paketi, sanal DOM'un gerçek tarayıcı DOM'una işlenmesinden sorumludur ve React uygulamanızın tarayıcıda görüntülenmesini sağlar.
