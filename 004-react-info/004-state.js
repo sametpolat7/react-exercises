@@ -1,6 +1,7 @@
 // ==== State ====
-// React'te State, bir componentin mevcut durumunu veya verilerini temsil eden bir nesneyi ifade eder. Esasen bir componentin dahili olarak koruyabileceği ve yönetebileceği bilgilerdir.
+// Bir componentin içinde değişme potansiyeli olan verileri tuttuğumuz yapıdır. Herhangi bir state değiştiği anda ilgili component render edilir. Bir componentin mevcut durumunu veya verilerini temsil eden bir nesneyi ifade eder. Esasen bir componentin dahili olarak koruyabileceği ve yönetebileceği bilgilerdir.
 
+// == Özellikler ==
 // 1. Veri Depolama: State, React componentlerinin zaman içinde değişebilen verileri depolamasına ve yönetmesine olanak tanır. Bu veriler, kullanıcı girdisini, sunucu yanıtlarını veya bileşenle ilgili diğer dinamik bilgileri içerebilir.
 
 // 2. Değiştirilebilir: Değişmez olan ve üst componentten alt componente aktarılan prop'ların aksine state değişkendir ve component içinde güncellenebilir.
@@ -19,11 +20,13 @@
 
 // Genel olarak state, React'te bileşenlerin veri veya kullanıcı etkileşimlerindeki değişiklikleri yönetmesini ve bunlara yanıt vermesini sağlayarak React uygulamalarını dinamik ve etkileşimli hale getiren temel bir kavramdır.
 
-// React state (durum) değişikliklerini yönetir ve kullanıcı arayüzünü "uzlaşma" adı verilen bir süreç aracılığıyla günceller. İşte nasıl çalıştığı:
+
+// == Nasıl Çalışır? == 
+// React state (durum) değişikliklerini yönetir ve kullanıcı arayüzünü "uzlaşma" adı verilen bir süreç aracılığıyla günceller.
 
 // 1. State Değişiklikleri: Bir React componentin state'i değiştiğinde (genellikle kullanıcı etkileşimleri veya diğer olaylar nedeniyle), React bu değişikliği algılar.
 
-// 2. Sanal DOM Güncellemesi: React daha sonra componentnin yeni Statenu yansıtmak için sanal DOM'u günceller.
+// 2. Sanal DOM Güncellemesi: React daha sonra componentnin yeni state'ini yansıtmak için sanal DOM'u günceller.
 
 // 3. Fark Algoritması (Diffing): React, güncellenmiş sanal DOM'u sanal DOM'un önceki sürümüyle (anlık durum görüntüsü) karşılaştırmak için hızlı ve verimli bir fark algoritması kullanır.
 
@@ -31,6 +34,6 @@
 
 // 5. Reconciliation (Uzlaşma): React, bu minimum değişiklikleri gerçek DOM'a uygulayarak yalnızca gerekli güncellemelerin yapılmasını sağlar. Bu süreç uzlaştırma olarak bilinir.
 
-// 6. componentn Yeniden Oluşturma: React, güncellenmiş State yansıtmak için etkilenen componentni ve alt componentnlerini gerçek DOM'da yeniden işler.
+// 6. Componenti Yeniden Oluşturma: React, güncellenmiş State yansıtmak için etkilenen componenti ve alt componentnlerini gerçek DOM'da yeniden işler.
 
 // Bu süreci kullanarak React, kullanıcı arayüzü güncellemelerinin verimli bir şekilde gerçekleştirilmesini sağlayarak gereken DOM manipülasyon miktarını en aza indirir ve uygulamanın performansını artırır. Bu yaklaşım ayrıca DOM'u doğrudan manipüle etmenin karmaşıklıklarını soyutlayarak geliştiricilerin uygulama mantığını ve UI componentlerini oluşturmaya odaklanmasına olanak tanır.

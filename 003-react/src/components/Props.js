@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 
 function Props(props) {
@@ -6,7 +7,7 @@ function Props(props) {
             {/* component içinde props tanımlama, component fonksiyonunda kullanma */}
             <h1>
                 {
-                    props.isLoggedIn ? ` ${props.name} ${props.surName} (${props.age}). Welcome!` : `Guest. Please Log In!`
+                    props.isLoggedIn ? `Welcome! ${props.name} ${props.surName} (${props.age}).` : `Guest. Please Log In!`
                 }
             </h1> 
            
@@ -29,7 +30,6 @@ function Props(props) {
                     })
                 }
             </ul>
-
             <ol>
                 {
                     props.friends.map((item) => {
@@ -38,12 +38,18 @@ function Props(props) {
                 }
             </ol>
             <br/>
-            <h2>
+            <h2 id='address'>
                 {
                     props.address.title + " " + props.address.zip
                 }
             </h2>
+            <button onClick={() => {
+                document.getElementById('address').style.visibility = 'visible'
+            }}>Get Address</button>
+            <button onClick={props.removeAddress}>Remove Address</button>
 
+            <h1>{props.someData}</h1>
+            <button onClick={props.changeData}>Change Data</button>
         </>
     )
 }
@@ -62,5 +68,11 @@ Props.propTypes = {
         zip: PropTypes.number
     })
 };
+
+Props.defaultProps = {
+    removeAddress: () => {
+        console.log("Function not find!")
+    }
+}
 
 export default Props;

@@ -4,7 +4,7 @@ function State() {
     const [name, setName] = useState("Guest!");
 
     const [friends, setFriends] = useState([]);
-    const myFriends = ["Ali", "Kel", "Özlem", "Onur"]
+    const myFriends = ["Ali", "Kel", "Özlem", "Onur"];
     const [index, setIndex] = useState(0);
     const [address, setAddress] = useState({title: "Merkez/Çanakkale", zip: 17100});
     const [count, setCount] = useState(0);
@@ -71,35 +71,35 @@ function State() {
         <br/><br/>
 
 
-        <div>
+        <form>
             <h1>Form Management with State</h1>
             <label>Name: </label>
             <input type='text' value={inpName} onChange={(event) => {
                 return setInpName(event.target.value)
-            }}></input>
+            }} autoComplete='off'></input>
             &nbsp;&nbsp;
             <label>Surname: </label>
             <input type='text' value={inpSurname} onChange={(event) => {
                 return setInpSurname(event.target.value);
-            }}></input>
+            }} autoComplete='off'></input>
             <br/><br/>
             {`Name : ${inpName}`} 
             <br/>
             {`Surname : ${inpSurname}`}
-        </div>
+        </form>
 
-        <div>
+        <form>
             <h1>Easy One! Also Form Management</h1>
             <label>Name: </label>
-            <input type='text' name='name' value={form.name} onChange={changeForm}></input>
+            <input type='text' name='name' value={form.name} onChange={changeForm} autoComplete='off'></input>
             &nbsp;&nbsp;
             <label>Surname: </label>
-            <input type='text' name='surname' value={form.surname} onChange={changeForm}></input>
+            <input type='text' name='surname' value={form.surname} onChange={changeForm} autoComplete='off'></input>
             <br/><br/>
             {`Name : ${form.name}`} 
             <br/>
             {`Surname : ${form.surname}`}
-        </div>
+        </form>
         </>
     )
 }
